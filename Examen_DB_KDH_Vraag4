@@ -1,0 +1,13 @@
+VRAAG1:
+QUERY:
+db.bioinf_mongo_examen.count({percentage_of_side_effects:{$gt:8}})
+ANTWOORD:
+399
+----
+VRAAG2:
+QUERY:
+db.bioinf_mongo_examen.aggregate([{$group:{_id:"$company",average_se:{$avg:"$percentage_of_side_effects"}}},{$match:{average_se:{$gt:10}}},{$sort:{average_se:-1}}])
+ANTWOORD:
+Galderma Laboratories, L.P - 11.5
+Watson Pharmaceuticals, Inc. - 10.65
+Durata Therapeutics, Inc. - 10.5

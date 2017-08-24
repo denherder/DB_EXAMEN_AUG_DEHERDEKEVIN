@@ -1,0 +1,23 @@
+UNF 
+Project(Personeelsnummer,Naam,Geboortedatum,Labocode,Labonaam,Projectcode,Projectomschrijving,Projectsupervisor)
+alles samenvoegen
+-----
+1NF 
+Project(Personeelsnummer,Naam,Geboorteplaats,Labcode,Labonaam,Projectcode,Projectomschrijving,Projectsupervisor)
+
+keys (Projectcode,personeelsnummer,projectsupervisor)
+-----
+2NF
+Project(Projectcode,Projectname,Personeelsnummer,SupervisorID,labcode,labname)
+Personeel(Personeelsnummer,Naam,Geboorteplaats)
+Supervisor(SupervisorID,Projectsupervisor)
+
+keys (Projectcode - personeelsnummer -projectsupervisor)
+---
+3NF
+Project(Projectcode,Projectname,Personeelsnummer,SupervisorID,labcode)
+Personeel(Personeelsnummer,Naam,Geboorteplaats)
+Supervisor(SupervisorID,Projectsupervisor)
+Lab(Labcode,Labname)
+
+keys (Projectcode - personeelsnummer -projectsupervisor -labcode)

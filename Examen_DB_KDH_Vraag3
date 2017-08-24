@@ -1,0 +1,12 @@
+VRAAG 1:
+QUERY:
+select gene_name, (seq_region_end - seq_region_start + 1) as length from examen.gene order by length desc limit 1;
+ANTWOORD:
+'TMPRSS3', '5379014'
+--------
+VRAAG 2:
+QUERY:
+select gene_name,count(gene_name) as transcripts_count from examen.gene JOIN examen.transcript ON transcript.gene_id = gene.gene_id group by gene_name order by transcripts_count desc limit 1;
+ANTWOORD:
+'U6', '1329'
+
